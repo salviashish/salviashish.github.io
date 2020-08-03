@@ -32,22 +32,23 @@ type Data = {
 }
 
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
-  const {siteTitle,siteSummary} = data.site.siteMetadata
+  const siteTitle = data.site.siteMetadata.siteTitle
+  const siteSummary = data.site.siteMetadata.siteSummary
   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout location={location} title={siteTitle} summary={siteSummary}>
-      <SEO title="Home" />
-      <div className="title" style={{width:`100%`,alignContent:'center'}}>
-        <h2> Latest Posts</h2>
-        <Link className="link" style={{marginTop:'3.5rem',height:'35px'}} to="/blog">Read all posts</Link>
-      </div>
+      <SEO title="All posts" />
+      <div className="title"><h2> Blog </h2></div>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <article key={node.fields.slug}>
               <header>
-                <h3 style={{ marginBottom: rhythm(1 / 4),}}
+                <h3
+                  style={{
+                    marginBottom: rhythm(1 / 4),
+                  }}
                 >
                   <Link className="link" style={{ boxShadow: `none` }} to={node.fields.slug}>
                     {title}
@@ -84,7 +85,7 @@ export const pageQuery = graphql`
         siteSummary
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC },limit:3) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt

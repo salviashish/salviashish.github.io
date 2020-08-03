@@ -1,0 +1,43 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+span, span a{
+    color:rgb(146, 163, 171);
+}
+p{
+    text-align: justify;
+}
+
+.navContainer{
+    margin-top:1.75rem;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:space-between;
+}
+.nav,.title{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100px;
+    font-size: large;
+}
+.link,.header{
+    color:#00000f;
+    box-shadow: none;
+    text-decoration: none;
+}
+.link:hover{
+    background: linear-gradient(to top, #fed330 10%, rgba(0, 0, 0, 0) 20%)
+}
+
+.about{
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+}
+
+.profile{
+    border:none;
+    border-radius: 25%;
+    box-shadow: #ccc;
+}

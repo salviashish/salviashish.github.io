@@ -1,14 +1,24 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    siteTitle: `Hey I'm Ashish`,
+    siteSummary: `Full Stack Developer | Atlanta, USA`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `@ashishsalvi`
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://www.salviashish.com/`,
+    navigations:[
+      {
+        title: `Blog`,
+        slug: `/blog`
+      },
+      {
+        title: `About`,
+        slug: `/about`
+      }
+    ],
     social: {
-      twitter: `kylemathews`,
+      twitter: `ashishsalvi`,
     },
   },
   plugins: [
@@ -45,6 +55,8 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-remark-reading-time`,
+          `gatsby-remark-emoji`
         ],
       },
     },
@@ -53,7 +65,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-66128996-1`,
       },
     },
     `gatsby-plugin-feed`,
