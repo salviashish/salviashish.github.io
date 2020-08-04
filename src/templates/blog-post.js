@@ -6,11 +6,11 @@ import SEO from "../components/seo"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
-  const {siteTitle, siteSummary } = data.site.siteMetadata
+  const {title, siteSummary } = data.site.siteMetadata
   const { previous, next } = pageContext
 
   return (
-    <Layout location={location} title={siteTitle} summary={siteSummary}>
+    <Layout location={location} title={title} summary={siteSummary}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -67,7 +67,7 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
-        siteTitle,
+        title,
         siteSummary
       }
     }

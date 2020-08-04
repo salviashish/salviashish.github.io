@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteTitle: `Hey I'm Ashish`,
+    title: `Hey I'm Ashish`,
     siteSummary: `Full Stack Developer | Atlanta, USA`,
     author: {
       name: `@ashishsalvi`
@@ -72,13 +72,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `salviashish`,
+        short_name: `salviashish`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/profile-pic.png`,
       },
     },
     `gatsby-plugin-react-helmet`,

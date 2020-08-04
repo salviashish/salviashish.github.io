@@ -10,7 +10,7 @@ import { rhythm } from "../utils/typography"
 type Data = {
   site: {
     siteMetadata: {
-      siteTitle: string
+      title: string
       siteSummary: string
     }
   }
@@ -32,11 +32,11 @@ type Data = {
 }
 
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
-  const {siteTitle,siteSummary} = data.site.siteMetadata
+  const {title,siteSummary} = data.site.siteMetadata
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Layout location={location} title={siteTitle} summary={siteSummary}>
+    <Layout location={location} title={title} summary={siteSummary}>
       <SEO title="Home" />
       <div className="title" style={{width:`100%`,alignContent:'center'}}>
         <h2> Latest Posts</h2>
@@ -80,7 +80,7 @@ export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
-        siteTitle
+        title
         siteSummary
       }
     }

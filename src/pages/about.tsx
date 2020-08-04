@@ -13,7 +13,7 @@ type Data = {
   }
   site: {
     siteMetadata: {
-      siteTitle: string
+      title: string
       siteSummary: string,
       author: {
         name:string
@@ -23,10 +23,10 @@ type Data = {
 }
 
 const AboutPage = ({ data, location }: PageProps<Data>) => {
-  const {siteTitle,siteSummary,author} = data.site.siteMetadata;
+  const {title,siteSummary,author} = data.site.siteMetadata;
 
   return (
-    <Layout location={location} title={siteTitle} summary={siteSummary}>
+    <Layout location={location} title={title} summary={siteSummary}>
       <SEO title="About" />
       <div className="title"><h2> About </h2></div>
       <section>
@@ -66,7 +66,7 @@ export const pageQuery = graphql`
         author {
           name
         }
-        siteTitle
+        title
         siteSummary
       }
     }
